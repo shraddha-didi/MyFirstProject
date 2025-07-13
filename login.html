@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box; margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #1E3C72, #2A5298);
+            padding: 20px;
+        }
+        .container {
+            display: flex; background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); max-width: 900px; width: 100%;
+        }
+        .login-form {
+            flex: 1; padding: 40px; text-align: center;
+        }
+        .login-form h2 {
+            margin-bottom: 20px; color: #333; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .login-form input, .login-form select {
+            width: 100%; padding: 12px; margin: 10px 0;
+            border: 1px solid #ccc; border-radius: 8px; font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .login-form input:focus, .login-form select:focus {
+            border-color: #2A5298; outline: none;
+            box-shadow: 0 0 8px rgba(42, 82, 152, 0.5);
+        }
+        .login-form button {
+            width: 100%; padding: 12px; background: #2A5298; color: white;
+            border: none; border-radius: 8px; cursor: pointer; font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+        .login-form button:hover {
+            background: #1E3C72; transform: scale(1.05);
+        }
+        .social-login {
+            display: flex; justify-content: center; gap: 10px; margin-top: 15px;
+        }
+        .social-login button {
+            padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;
+            font-size: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        .google {
+            background: #db4437; color: white;
+        }
+        .facebook {
+            background: #1877f2; color: white;
+        }
+        .register-link {
+            margin-top: 15px; font-size: 14px;
+        }
+        .register-link a {
+            color: #2A5298; text-decoration: none; font-weight: bold;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        /* Image Section */
+        .image-section {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            padding: 20px; background: linear-gradient(to right, #B0C4DE, #87CEEB);
+        }
+        .image-section img {
+            width: 100%; max-width: 400px;
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+        }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .image-section { height: auto; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login-form">
+        <h2>Login</h2>
+        <!-- <form method="POST" action="{{ url_for('login') }}"> -->
+            <form method="post" action="login.php">
+            <select name="role" required>
+                <option value="user">User</option>
+		<option value="admin">Designer</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" name="fullname" placeholder="Enter fullname" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="social-login">
+            <button class="google">Login with Google</button>
+            <button class="facebook">Login with Facebook</button>
+        </div>
+        <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="log.jpg" alt="Login Illustration">
+    </div>
+</div>
+</body>
+</html>
